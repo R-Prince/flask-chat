@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap');
+
+.homepage-header{
+    font-family: 'Staatliches', cursive;
+    text-transform: uppercase;
+    color: white;
+    font-size: 9vh
+}
+
+.username-label{
+    font-family: 'Staatliches', cursive;
+    color: white;
+    font-size: 4vh
+}
+
+.homepage-background{
+    background-color: #36D96F;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.submit-btn{
+    color: white;
+    background-color: #F2784B;
+    border-color: #F2784B;
+    margin: 2px;
+}
+
+input[type=text] {
+  border: 2px solid #F2784B;
+  border-radius: 4px;
+}
