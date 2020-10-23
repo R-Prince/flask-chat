@@ -33,7 +33,8 @@ def index():
 @app.route("/<username>")
 def user(username):
     # Display chat message
-    return f"<h1>Welcome {username.title()}</h1> {messages}"
+    return render_template(
+        'chat.html', username=username, chat_messages=messages)
 
 
 @app.route("/<username>/<message>")
