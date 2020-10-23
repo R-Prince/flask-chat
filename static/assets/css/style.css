@@ -17,7 +17,7 @@
     background-color: #36D96F;
     height: 100vh;
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
 }
