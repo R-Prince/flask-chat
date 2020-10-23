@@ -10,7 +10,8 @@ app.secret_key = "randomstring123"
 def add_message(username, message):
     # Add message to the messages list with time stamp
     now = datetime.now().strftime("%H:%M:%S")
-    messages.append(f"{username.title()}: {message} ({now})")
+    messages_dict = {"timestamp": now, "from": username, "message": message}
+    messages.append(messages_dict)
 
 
 def get_all_messages():
@@ -20,7 +21,7 @@ def get_all_messages():
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    # Main page instructions
+    # Prompt user to supply username and then direct to personal homepage
     if request.method == "POST":
         session["username"] = request.form["username"]
     if "username" in session:
@@ -32,7 +33,7 @@ def index():
 @app.route("/<username>")
 def user(username):
     # Display chat message
-    return f"<h1>Welcome {username.title()}</h1> {get_all_messages()}"
+    return f"<h1>Welcome {username.title()}</h1> {messages}"
 
 
 @app.route("/<username>/<message>")
