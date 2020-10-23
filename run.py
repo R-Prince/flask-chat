@@ -11,7 +11,8 @@ messages = []
 def add_message(username, message):
     """Add messages to the `messages` list"""
     now = datetime.now().strftime("%H:%M:%S")
-    messages.append({"timestamp": now, "from": username, "message": message})
+    message_dict = {"timestamp": now, "from": username, "message": message}
+    messages.append(message_dict)
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -34,6 +35,9 @@ def user(username):
         message = request.form["message"]
         add_message(username, message)
         return redirect(url_for("user", username=session["username"]))
+
+    if len(messages) > 5:
+        messages.pop(0)
 
     return render_template("chat.html", username=username,
                            chat_messages=messages)
