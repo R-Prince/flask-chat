@@ -11,7 +11,7 @@
     <div class="container-fluid chat-background">
         <div class="row">
             <div class="col-12">
-                <img class="img-fluid chat-image" src="https://lh3.googleusercontent.com/proxy/DU1e4xt7Gm6VyztW2InB0e1j0J75-h3oAfYNkQ9F4wbRR8PIDJk5TifYUDtjeoyVEMqat01k_ebTVB7YguFcH09evyyEmYUD3Cz0M-EULeR4FJXtxXhrOr8XBQ" alt="dino couple">
+                <img class="img-fluid chat-image" src="https://www.clipartmax.com/png/full/30-309998_15-cute-baby-dinosaur-pictures-free-cliparts-that-you-baby-dinosaur-cartoon.png" alt="dino couple">
             </div>
         </div>
         <div class="row">
@@ -28,13 +28,18 @@
                 </form>
             </div>
         </div>
-        <ul class="text-center">
-        {% for message in chat_messages %}
-            <li class="chat-messages">({{ message.timestamp }}) {{ message.from }}: {{ message.message }}</li>
-        {% endfor %}
-        </ul>
     </div>
-
+    <div class="container message-background">
+        <div class="row">
+            <div class="col-12">
+                <ul>
+                    {% for message in chat_messages %}
+                    <li class="chat-messages">({{ message.timestamp }}) {{ message.from }}: {{ message.message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
     <script>
         let textbox = document.getElementById("message")
     

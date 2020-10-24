@@ -7,6 +7,10 @@
     font-size: 9vh
 }
 
+body{
+    background-color: #36D96F;
+}
+
 .username-label{
     font-family: 'Staatliches', cursive;
     color: white;
@@ -24,11 +28,15 @@
 
 .chat-background{
     background-color: #36D96F;
-    height: 100vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.message-background{
+    justify-content: center;
 }
 
 .submit-btn{
@@ -53,12 +61,9 @@ input[type=text] {
     font-family: 'Montserrat', sans-serif;
     list-style: none;
     background-color: white;
-    width: 100%;
     margin: 3px;
     padding: 3px;
-    font-size: 3vh;
     border: 2px solid #F2784B;
-
 }
 
 .hello{
